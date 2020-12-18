@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Login from './Components/js/Login';
 import Employees from './Components/js/Employees';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
