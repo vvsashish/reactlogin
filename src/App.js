@@ -3,17 +3,10 @@ import { connect } from 'react-redux';
 import Login from './Components/js/Login';
 import Employees from './Components/js/Employees';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
-  }
-  componentDidMount() {
-    fetch('config.json')
-      .then((data) => data.json())
-      .then((config) => {
-        this.props.getConfig(config);
-      });
   }
   render() {
     return (
@@ -30,14 +23,5 @@ const mapStateToProps = (state) => {
     IsCredentialsValid: state.IsCredentialsValid
   }
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getConfig: (data) => {
-      dispatch({
-        type: "GET_CONFIG",
-        payload: data
-      })
-    }
-  }
-}
+const mapDispatchToProps = (dispatch) => { return {} }
 export default connect(mapStateToProps, mapDispatchToProps)(App);
